@@ -1,6 +1,6 @@
 FROM amazoncorretto:17.0.14-al2023-headless
 # properties
-ARG JAR_FILE=target/java-docker-app.jar
+ARG JAR_FILE=target/spring-boot-app.jar
 ARG JAR_LIB_FILE=target/lib/
 # change working directory # cd path-to-your-working-directory
 WORKDIR /app/docker-builds
