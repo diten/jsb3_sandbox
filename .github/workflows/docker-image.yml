@@ -41,7 +41,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
-          dockerfile: docker/Dockerfile
+          dockerfile: ./docker/Dockerfile
           push: false
           tags: vonditen1/jsb3:v1.0.0
 
@@ -55,6 +55,6 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
-          dockerfile: docker/Dockerfile
+          dockerfile: ./docker/Dockerfile
           push: true
           tags: vonditen1/jsb3:v1.0.0
