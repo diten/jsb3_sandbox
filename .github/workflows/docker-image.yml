@@ -41,7 +41,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
-          dockerfile: Dockerfile
+          dockerfile: docker/Dockerfile
           push: false
 #          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/rest-api:v1.0.0
 
