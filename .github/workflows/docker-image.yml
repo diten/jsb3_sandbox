@@ -57,7 +57,7 @@ jobs:
       - name: push the docker image to docker hub
         uses: docker/build-push-action@v4
         with:
-          context: .
-          dockerfile: ./docker/Dockerfile
+          context: ./docker
+          dockerfile: Dockerfile
           push: true
           tags: vonditen1/jsb3:v1.0.0
