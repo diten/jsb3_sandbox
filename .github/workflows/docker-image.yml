@@ -43,8 +43,8 @@ jobs:
       - name: build the docker image
         uses: docker/build-push-action@v4
         with:
-          context: .
-          dockerfile: ./docker/Dockerfile
+          context: ./docker
+          dockerfile: Dockerfile
           push: false
           tags: vonditen1/jsb3:v1.0.0
 
