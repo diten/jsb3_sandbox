@@ -19,17 +19,6 @@ jobs:
 
       - name: unit tests
         run: mvn -B test --file pom.xml
-      
-#      - name: SonarQube Scan
-#        uses: kitabisa/sonarqube-action@v1.2.0
-#        env:
-#          SONAR_SCANNER_OPTS: -X
-#        with:
-#          host: ${{ secrets.SONARQUBE_HOST }}
-#          login: ${{ secrets.SONARQUBE_TOKEN }}
-#          projectBaseDir: "src/"
-#          projectKey: "my-custom-project"
-        
        
       - name: build the app
         run: |
@@ -37,7 +26,10 @@ jobs:
           mvn -B package --file pom.xml
           
       - name: Move built JAR to docker folder
-        run: mv target/*.jar docker/spring-boot-app.jar
+        run: mv target/*.jar spring-boot-app.jar
+
+      - name: Debug - List files
+        run: ls -R
 
       - name: build the docker image
         uses: docker/build-push-action@v4
