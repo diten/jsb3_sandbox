@@ -36,6 +36,9 @@ jobs:
         run: |
           mvn clean
           mvn -B package --file pom.xml
+          
+      - name: Move built JAR to docker folder
+        run: mv target/*.jar docker/spring-boot-app.jar
 
       - name: Debug - List files
         run: ls -R
@@ -43,8 +46,8 @@ jobs:
       - name: build the docker image
         uses: docker/build-push-action@v4
         with:
-          context: ./docker
-          dockerfile: Dockerfile
+          context: .
+          dockerfile: docker/Dockerfile
           push: false
           tags: vonditen1/jsb3:v1.0.0
 
