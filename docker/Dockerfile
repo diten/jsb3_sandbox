@@ -1,5 +1,5 @@
 FROM amazoncorretto:17.0.14-al2023-headless
 ARG JAR_FILE=spring-boot-app.jar
-WORKDIR /app/docker-builds
+WORKDIR /app
 COPY ${JAR_FILE} app.jar
 ENTRYPOINT ["java","-jar","app.jar"]
