@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jsb3
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: java
+    spec:
+      containers:
+        - name: java-app
+          image: vonditen1/jsb3:v1.0.0
+          ports:
+            - containerPort: 80
+          imagePullPolicy: IfNotPresent
